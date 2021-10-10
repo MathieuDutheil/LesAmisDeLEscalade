@@ -17,11 +17,7 @@ public class Cotation {
     private String cotation;
 
     @OneToMany(
-            fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            }
+            mappedBy = "cotation"
     )
     @JoinColumn(name = "cotation_id")
     private List<Voie> voies = new ArrayList<>();

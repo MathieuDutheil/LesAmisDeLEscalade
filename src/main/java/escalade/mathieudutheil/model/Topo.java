@@ -2,7 +2,9 @@ package escalade.mathieudutheil.model;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -28,6 +30,31 @@ public class Topo {
 
     @Column(name = "disponible")
     private Boolean disponible;
+
+    @OneToMany(
+            mappedBy = "topo"
+    )
+    private List<Reservation> reservations = new ArrayList<>();
+
+    @ManyToOne(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name = "grimpeur_id")
+    private Grimpeur grimpeur;
+
+    @ManyToOne(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name = "site_de_grimpe_id")
+    private Grimpeur siteDeGrimpe;
 
 
     //Getters and Setters
@@ -77,5 +104,13 @@ public class Topo {
 
     public void setDisponible(Boolean disponible) {
         this.disponible = disponible;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 }

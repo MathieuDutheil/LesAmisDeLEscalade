@@ -15,6 +15,37 @@ public class Reservation {
     @Column(name = "date_reservation")
     private Date dateReservation;
 
+    @ManyToOne(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name="grimpeur_id")
+    private Grimpeur grimpeur;
+
+    @ManyToOne(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name="statut_id")
+    private Statut statut;
+
+    @ManyToOne(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name="topo_id")
+    private Topo topo;
+
+
 
     //Getters and Setters
     public Integer getId() {

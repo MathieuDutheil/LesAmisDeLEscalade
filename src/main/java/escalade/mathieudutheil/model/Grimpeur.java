@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "grimpeur")
-public class  Grimpeur {
+public class Grimpeur {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,41 +47,24 @@ public class  Grimpeur {
 
 
     @OneToMany(
-            fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            }
+            mappedBy = "grimpeur"
     )
-    @JoinColumn(name = "grimpeur_id")
     private List<Commentaire> commentaires = new ArrayList<>();
 
-    @OneToMany(
-            fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            }
-    )
-    @JoinColumn(name = "grimpeur_id")
-    private List<Topo> topos = new ArrayList<>();
 
     @OneToMany(
-            fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            }
+            mappedBy = "grimpeur"
     )
-    @JoinColumn(name = "grimpeur_id")
     private List<Reservation> reservations = new ArrayList<>();
 
     @OneToMany(
-            fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            }
+            mappedBy = "grimpeur"
+    )
+    private List<Topo> topos = new ArrayList<>();
+
+
+    @OneToMany(
+            mappedBy = "grimpeur"
     )
     @JoinColumn(name = "grimpeur_id")
     private List<SiteDeGrimpe> siteDeGrimpes = new ArrayList<>();

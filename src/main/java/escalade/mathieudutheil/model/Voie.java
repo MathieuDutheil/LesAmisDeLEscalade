@@ -26,6 +26,25 @@ public class Voie {
     @Column(name = "voie_equipee")
     private Boolean voieEquipee;
 
+    @ManyToOne(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name = "secteur_id")
+    private Secteur secteur;
+
+    @ManyToOne(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name = "cotation_id")
+    private Secteur cotation;
 
 
     //Getters and Setters

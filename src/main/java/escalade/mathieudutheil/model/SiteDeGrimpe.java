@@ -26,40 +26,31 @@ public class SiteDeGrimpe {
     private Boolean taggeAssociation;
 
     @OneToMany(
-            cascade = CascadeType.ALL, //Si je supprime le Site de grimpe, cela supprimera les secteurs associés, si je mets à jour pareil
-            orphanRemoval = true, //Evite qu'en base de de données il existe des Secteurs alors que le Site de grimpe a été supprimé
-            fetch = FetchType.EAGER // lorsqu'on va récupérer le site de grimpe tous les secteurs seront récupérés
-    )
-    @JoinColumn(name = "site_de_grimpe_id")
+            mappedBy = "siteDeGrimpe"
+            )
+
     private List<Secteur> secteurs = new ArrayList<>();
 
     @OneToMany(
-            fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            }
+            mappedBy = "siteDeGrimpe"
     )
-    @JoinColumn(name = "site_de_grimpe_id")
     private List<Commentaire> commentaires = new ArrayList<>();
 
     @OneToMany(
+            mappedBy = "siteDeGrimpe"
+    )
+
+    private List<Topo> topos = new ArrayList<>();
+
+    @ManyToOne(
             fetch = FetchType.LAZY,
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
             }
     )
-    @JoinColumn(name = "site_de_grimpe_id")
-    private List<Topo> topos = new ArrayList<>();
-
-    /*@ManyToOne(
-            fetch = FetchType.LAZY,
-            cascade = {CascadeType.PERSIST,
-                    CascadeType.MERGE
-            }
-    )
-    private List<Grimpeur>*/
+    @JoinColumn(name = "grimpeur_id")
+    private Civilite grimpeur;
 
 
     //Getters and Setters

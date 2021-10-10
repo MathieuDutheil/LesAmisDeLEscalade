@@ -18,15 +18,13 @@ public class Statut {
     @Column(name = "statut")
     private String statut;
 
+
     @OneToMany(
-            fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            }
+            mappedBy = "statut"
     )
-    @JoinColumn(name = "statut_id")
     private List<Reservation> reservations = new ArrayList<>();
+
+
 
     //Getters and Setters
     public Integer getId() {
@@ -52,4 +50,5 @@ public class Statut {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
+
 }

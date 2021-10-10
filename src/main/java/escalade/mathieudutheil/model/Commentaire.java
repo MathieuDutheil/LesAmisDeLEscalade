@@ -14,6 +14,25 @@ public class Commentaire {
     @Column(name = "commentaire")
     private String commentaire;
 
+    @ManyToOne(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name = "grimpeur_id")
+    private Grimpeur grimpeur;
+
+    @ManyToOne(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name = "site_de_grimpe_id")
+    private SiteDeGrimpe siteDeGrimpe;
 
     //Getters and Setters
     public Integer getId() {

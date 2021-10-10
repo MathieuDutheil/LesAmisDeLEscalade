@@ -23,12 +23,20 @@ public class Secteur {
     private String altitude;
 
     @OneToMany(
-            cascade = CascadeType.ALL, //Si je supprime le Secteur, cela supprimera les Voies associés, si je mets à jour pareil
-            orphanRemoval = true, //Evite qu'en base de de données il existe des Voies alors que le Secteur a été supprimé
-            fetch = FetchType.EAGER // lorsqu'on va récupérer les Secteurs toutes les voies seront récupérés
+            mappedBy = "secteur"
     )
-    @JoinColumn(name = "secteur_id")
     private List<Voie> voies = new ArrayList<>();
+
+    @ManyToOne(
+            fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name = "site_de_grimpe_id")
+    private Civilite siteDeGrimpe;
+
 
     public Integer getId() {
         return id;
