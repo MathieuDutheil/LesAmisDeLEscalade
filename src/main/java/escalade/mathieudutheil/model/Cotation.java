@@ -19,7 +19,6 @@ public class Cotation {
     @OneToMany(
             mappedBy = "cotation"
     )
-    @JoinColumn(name = "cotation_id")
     private List<Voie> voies = new ArrayList<>();
 
     //Getters and Setters

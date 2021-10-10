@@ -66,7 +66,6 @@ public class Grimpeur {
     @OneToMany(
             mappedBy = "grimpeur"
     )
-    @JoinColumn(name = "grimpeur_id")
     private List<SiteDeGrimpe> siteDeGrimpes = new ArrayList<>();
 
 
