@@ -50,4 +50,20 @@ public class Commentaire {
     public void setCommentaire(String commentaire) {
         this.commentaire = commentaire;
     }
+
+    public Grimpeur getGrimpeur() {
+        return grimpeur;
+    }
+
+    public void setGrimpeur(Grimpeur grimpeur) {
+        this.grimpeur = grimpeur;
+    }
+
+    public SiteDeGrimpe getSiteDeGrimpe() {
+        return siteDeGrimpe;
+    }
+
+    public void setSiteDeGrimpe(SiteDeGrimpe siteDeGrimpe) {
+        this.siteDeGrimpe = siteDeGrimpe;
+    }
 }

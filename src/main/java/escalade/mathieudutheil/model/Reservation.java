@@ -63,4 +63,30 @@ public class Reservation {
     public void setDateReservation(Date dateReservation) {
         this.dateReservation = dateReservation;
     }
+
+    public Grimpeur getGrimpeur() {
+        return grimpeur;
+    }
+
+    public void setGrimpeur(Grimpeur grimpeur) {
+        this.grimpeur = grimpeur;
+    }
+
+    public Statut getStatut() {
+        return statut;
+    }
+
+    public void setStatut(Statut statut) {
+        this.statut = statut;
+    }
+
+    public Topo getTopo() {
+        return topo;
+    }
+
+    public void setTopo(Topo topo) {
+        this.topo = topo;
+    }
+
+
 }

@@ -45,4 +45,6 @@ public class Cotation {
     public void setVoies(List<Voie> voies) {
         this.voies = voies;
     }
+
+
 }

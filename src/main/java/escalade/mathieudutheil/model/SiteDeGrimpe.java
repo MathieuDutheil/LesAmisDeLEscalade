@@ -117,4 +117,12 @@ public class SiteDeGrimpe {
     public void setTopos(List<Topo> topos) {
         this.topos = topos;
     }
+
+    public Civilite getGrimpeur() {
+        return grimpeur;
+    }
+
+    public void setGrimpeur(Civilite grimpeur) {
+        this.grimpeur = grimpeur;
+    }
 }

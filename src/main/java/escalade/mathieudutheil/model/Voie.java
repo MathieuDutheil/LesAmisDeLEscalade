@@ -95,4 +95,20 @@ public class Voie {
     public void setVoieEquipee(Boolean voieEquipee) {
         this.voieEquipee = voieEquipee;
     }
+
+    public Secteur getSecteur() {
+        return secteur;
+    }
+
+    public void setSecteur(Secteur secteur) {
+        this.secteur = secteur;
+    }
+
+    public Secteur getCotation() {
+        return cotation;
+    }
+
+    public void setCotation(Secteur cotation) {
+        this.cotation = cotation;
+    }
 }

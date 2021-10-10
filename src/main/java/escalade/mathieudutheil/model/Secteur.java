@@ -77,4 +77,12 @@ public class Secteur {
     public void setVoies(List<Voie> voies) {
         this.voies = voies;
     }
+
+    public Civilite getSiteDeGrimpe() {
+        return siteDeGrimpe;
+    }
+
+    public void setSiteDeGrimpe(Civilite siteDeGrimpe) {
+        this.siteDeGrimpe = siteDeGrimpe;
+    }
 }

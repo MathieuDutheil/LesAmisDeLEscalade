@@ -46,4 +46,6 @@ public class Civilite {
     public void setGrimpeurs(List<Grimpeur> grimpeurs) {
         this.grimpeurs = grimpeurs;
     }
+
+
 }

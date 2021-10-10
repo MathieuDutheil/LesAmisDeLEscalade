@@ -113,4 +113,20 @@ public class Topo {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
+
+    public Grimpeur getGrimpeur() {
+        return grimpeur;
+    }
+
+    public void setGrimpeur(Grimpeur grimpeur) {
+        this.grimpeur = grimpeur;
+    }
+
+    public Grimpeur getSiteDeGrimpe() {
+        return siteDeGrimpe;
+    }
+
+    public void setSiteDeGrimpe(Grimpeur siteDeGrimpe) {
+        this.siteDeGrimpe = siteDeGrimpe;
+    }
 }
