@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Création d'un grimpeur</title>
+    <link type="text/css" rel="stylesheet" href="<c:url value="/inc/style.css"/>" />
+</head>
+<body>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Désignation</th>
+        <th>PRIX</th>
+        <th>QTE</th>
+    </tr>
+
+    <!--/*@thymesVar id="listeCivilites" type=""*/-->
+    <tr th:each="p:${listeCivilites}">
+        <td th:text="${p.civilite}" />
+
+        <td>
+            <a class="btn btn-danger"onclick="return confirm('Etes vous sûre?')" th:href="@{/delete(id=${p.id}, page=${currentPage}, motCle=${motCle})}">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

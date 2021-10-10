@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste Grimpeurs</title>
+    <link rel="stylesheet" href="../static/css/style.css"
+          th:href="@{css/style.css}">
+</head>
+<body>
+<div class="panel-body">
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Civilité</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Mot de passe</th>
+            <th>Téléphone</th>
+            <th>Membre association</th>
+        </tr>
+
+        <tr th:each="p:${listeGrimpeurs}">
+            <td th:text="${p.id}"/>
+            <td th:text="${p.civilite.civilite}"/>
+            <td th:text="${p.nom}"/>
+            <td th:text="${p.prenom}"/>
+            <td th:text="${p.email}"/>
+            <td th:text="${p.motDePasse}"/>
+            <td th:text="${p.telephone}"/>
+            <td th:text="${p.membreAssociation}"/>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
