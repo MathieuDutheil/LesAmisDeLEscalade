@@ -33,5 +33,27 @@
         </tr>
     </table>
 </div>
+
+<div class="panel-body">
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Date réservation</th>
+            <th>Nom Topo</th>
+            <th>Nom Grimpeur</th>
+            <th> Prenom Grimpeur</th>
+            <th>Statut</th>
+        </tr>
+
+        <tr th:each="p:${listeReservations}">
+            <td th:text="${p.id}"/>
+            <td th:text="${p.dateReservation}"/>
+            <td th:text="${p.topo.nom}"/>
+            <td th:text="${p.grimpeur.nom}"/>
+            <td th:text="${p.grimpeur.prenom}"/>
+            <td th:text="${p.statut.statut}"/>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
